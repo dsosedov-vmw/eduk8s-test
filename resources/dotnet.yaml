@@ -1,0 +1,71 @@
+apiVersion: training.eduk8s.io/v1alpha2
+kind: Workshop
+metadata:
+  name: dotnet
+spec:
+  title: .NET
+  description: Modernizing an App For Scale.
+  url: https://dotnet.com
+  content:
+    files: github.com/dsosedov-vmw/eduk8s-test/workshops/dotnet
+  session:
+    namespaces:
+      budget: small
+    applications:
+      terminal:
+        enabled: true
+        layout: split
+      editor:
+        enabled: true
+      registry:
+        enabled: true
+    dashboards:
+    - name: Docs
+      url: https://tanzu.vmware.com
+    # objects:
+    # - apiVersion: training.eduk8s.io/v1alpha2
+    #   kind: Workshop
+    #   metadata:
+    #     name: $(session_namespace)-playground
+    #   spec:
+    #     title: Playground
+    #     description: Creates the playground.
+    #     content:
+    #       image: base-environment:*
+    #       files: imgpkg+$(ingress_protocol)://$(registry_username):$(registry_password)@$(registry_host)/workshop-content:latest
+    #     session:
+    #       namespaces:
+    #         budget: large
+    #       applications:
+    #         terminal:
+    #           enabled: true
+    #           layout: split
+    #         console:
+    #           enabled: true
+    #           vendor: octant
+    #         editor:
+    #           enabled: true
+    #         examiner:
+    #           enabled: true
+    #         docker:
+    #           enabled: true
+    #         registry:
+    #           enabled: true
+    # - apiVersion: training.eduk8s.io/v1alpha1
+    #   kind: TrainingPortal
+    #   metadata:
+    #     name: $(session_namespace)-playground
+    #   spec:
+    #     portal:
+    #       title: Playgrounds
+    #       password: $(registry_password)
+    #       ingress:
+    #         hostname: $(session_namespace)-playground
+    #       registration:
+    #         type: anonymous
+    #       sessions:
+    #         maximum: 1
+    #       reserved: 0
+    #     workshops:
+    #     - name: $(session_namespace)-playground
+    #       expires: 24h

@@ -1,0 +1,5 @@
+name: Spring
+
+modules:
+  activate:
+  - exercise-1
