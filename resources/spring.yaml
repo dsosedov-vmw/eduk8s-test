@@ -22,7 +22,18 @@ spec:
     dashboards:
     - name: Docs
       url: https://tanzu.vmware.com
-    # objects:
+    objects:
+    - apiVersion: v1
+      kind: Pod
+      metadata:
+        labels:
+          run: nginx
+        name: nginx
+      spec:
+        containers:
+        - image: nginx
+          name: nginx
+        restartPolicy: Never
     # - apiVersion: training.eduk8s.io/v1alpha2
     #   kind: Workshop
     #   metadata:
