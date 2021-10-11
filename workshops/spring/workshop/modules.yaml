@@ -2,4 +2,4 @@ modules:
   exercise-1:
     name: Excercise 1
     description: Extract a microservice that communicates via REST
-    exit_sign: Explore Playground
+    exit_sign: Finish
