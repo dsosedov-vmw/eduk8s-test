@@ -10,7 +10,7 @@ spec:
     files: github.com/dsosedov-vmw/eduk8s-test/workshops/dotnet
   session:
     namespaces:
-      budget: small
+      budget: large
     applications:
       terminal:
         enabled: true
