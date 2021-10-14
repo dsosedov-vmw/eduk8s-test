@@ -2,28 +2,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-api-1
+  name: spring-api-2
   labels:
-    component: spring-api-1
+    component: spring-api-2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: spring-api-1
+      component: spring-api-2
   template:
     metadata:
       labels:
-        component: spring-api-1
+        component: spring-api-2
     spec:
       containers:
-      - name: spring-api-1
-        image: <spring-api-1-image>
+      - name: spring-api-2
+        image: <spring-api-2-image>
         imagePullPolicy: Always
-        env:
-        - name: PRODUCT_API_URL
-          value: http://spring-api-2:9080
         ports:
-        - containerPort: 8080
+        - containerPort: 9080
         resources:
           limits:
             cpu: "1"

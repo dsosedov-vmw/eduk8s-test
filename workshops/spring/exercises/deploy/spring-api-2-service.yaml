@@ -1,0 +1,13 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-api-2
+  labels:
+    component: spring-api-2
+spec:
+  selector:
+    component: spring-api-2
+  ports:
+    - port: 9080
+      targetPort: 9080
