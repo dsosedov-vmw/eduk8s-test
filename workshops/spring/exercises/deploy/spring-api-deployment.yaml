@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-api
+  labels:
+    component: spring-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: spring-api
+  template:
+    metadata:
+      labels:
+        component: spring-api
+    spec:
+      containers:
+      - name: spring-api
+        image: <spring-api-image>
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+          requests:
+            cpu: "1"
+            memory: 1Gi
