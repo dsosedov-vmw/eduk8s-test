@@ -2,12 +2,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: spring-api
+  name: spring-api-1
   labels:
-    component: spring-api
+    component: spring-api-1
 spec:
   selector:
-    component: spring-api
+    component: spring-api-1
   ports:
     - port: 8080
       targetPort: 8080

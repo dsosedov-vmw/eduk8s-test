@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-ui
+  labels:
+    component: react-ui
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: react-ui
+  template:
+    metadata:
+      labels:
+        component: react-ui
+    spec:
+      containers:
+      - name: react-ui
+        image: <react-ui-image>
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "0.33"
+            memory: 333Mi
+          requests:
+            cpu: "0.33"
+            memory: 333Mi
